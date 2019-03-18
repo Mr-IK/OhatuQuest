@@ -7,16 +7,32 @@ public final class OhatuQuest extends JavaPlugin {
 
     MQuest quest;
 
-    SayOhaman ohaman;
     WikiView wiki;
+    ShigenJoin shigen;
+    CasinoJoin casino;
+    FishGo fish;
+    PVEGo pve;
+    PVPGo pvp;
+    ShopGo shop;
+    EnemyKill10 enemyKill10;
+    Fishing10 fish10;
+    PVPkill10 kill10;
 
     @Override
     public void onEnable() {
         // Plugin startup logic
         quest = MQuest.getInstance();
 
-        ohaman = new SayOhaman(quest);
         wiki = new WikiView(quest);
+        shigen = new ShigenJoin(quest);
+        casino = new CasinoJoin(quest);
+        fish = new FishGo(quest);
+        pve = new PVEGo(quest);
+        pvp = new PVPGo(quest);
+        shop = new ShopGo(quest);
+        enemyKill10 = new EnemyKill10(quest);
+        fish10 = new Fishing10(quest);
+        kill10 = new PVPkill10(quest);
     }
 
     @Override

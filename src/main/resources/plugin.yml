@@ -3,3 +3,7 @@ version: ${project.version}
 main: red.man10.ohatuquest.OhatuQuest
 authors: [Mr_IK]
 description: Ohatu Quest Plugin
+  wikimitayo:
+    description: Man10Quest_WikiQuestCommand
+    usage: /<command>
+    default: op

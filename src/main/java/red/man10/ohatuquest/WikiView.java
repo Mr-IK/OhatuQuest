@@ -48,10 +48,12 @@ public class WikiView implements CommandExecutor {
                 return true;
             }
             Bukkit.getScheduler().runTaskAsynchronously(quest,()->{
-                if(!quest.fm.checkFlag("FirstView_wiki",p.getUniqueId())&&quest.qm.getQuests(p.getUniqueId()).contains(id)){
+                if(!quest.fm.checkFlag("FirstView_wiki",p.getUniqueId())){
                     quest.fm.upFlag("FirstView_wiki",p);
-                    Util.sendHoverText(p,quest.prefix+"§e§l§nWikiを見る達成！ クリックで報酬をゲットしよう！",
-                            "§eクリックで報酬ゲット！","/mquest check "+id);
+                    if(quest.qm.getQuests(p.getUniqueId()).contains(id)) {
+                        Util.sendHoverText(p, quest.prefix + "§e§l§nWikiを見る達成！ クリックで報酬をゲットしよう！",
+                                "§eクリックで報酬ゲット！", "/mquest check " + id);
+                    }
                 }else{
                     p.sendMessage(quest.prefix+"§cクリアできるのは一回のみです！");
                 }
